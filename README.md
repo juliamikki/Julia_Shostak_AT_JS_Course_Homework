@@ -1,1 +1,3 @@
-# Julia Shostak JS Homework 
+# Julia Shostak JS Homework
+
+First Homework added
