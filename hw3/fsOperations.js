@@ -1,10 +1,10 @@
-const fs = require(`fs-extra`);
-const path = require("path");
+import fs from "fs-extra"
+import path from "path"
 
 //create folder:
 function createFolder(order) {
     return fs.ensureDir(`folder${order}`)
-        .then(() => console.log(`Folder \"folder${order}\" is created successfully!`))
+        .then(() => console.log(`Folder "folder${order}" is created successfully!`))
         .catch(error => console.error(`Error creating folder:`, error));
 }
 
@@ -16,7 +16,7 @@ function createFile(order) {
 
     return fs.ensureDir(folder)
         .then(() => fs.writeFile(file, fileContent))
-        .then(() => console.log(`Text file \"file.txt\" is created successfully in folder \"folder${order}\"!`))
+        .then(() => console.log(`Text file "file.txt" is created successfully in folder "folder${order}"!`))
         .catch(error => console.error(`Error creating file:`, error));
 }
 
@@ -27,7 +27,7 @@ function moveFile(from, to) {
     const destinationFilePath = `folder${to}/file.txt`;
 
     return fs.move(sourceFilePath, destinationFilePath)
-        .then(() => console.log(`File is moved successfully from \"folder${from}\" to \"folder${to}\"!`))
+        .then(() => console.log(`File is moved successfully from "folder${from}" to "folder${to}"!`))
         .catch(error => console.error(`Error moving file:`, error));
 }
 
@@ -38,7 +38,7 @@ function copyFile(from, to) {
     const destinationFilePath = `folder${to}/file.txt`;
 
     return fs.copy(sourceFilePath, destinationFilePath)
-        .then(() => console.log(`File is copied successfully from \"folder${from}\" to \"folder${to}\"!`))
+        .then(() => console.log(`File is copied successfully from "folder${from}" to "folder${to}"!`))
         .catch(error => console.error(`Error copying file:`, error));
 }
 
@@ -47,7 +47,7 @@ function deleteFile(order) {
     const filePath = `./folder${order}/file.txt`;
 
     return fs.remove(filePath)
-        .then(() => console.log(`File \"file.txt\" is deleted successfully from \"folder${order}\"!`))
+        .then(() => console.log(`File "file.txt" is deleted successfully from "folder${order}"!`))
         .catch(error => console.error(`Error deleting file:`, error));
 }
 
@@ -63,7 +63,7 @@ function deleteFolders() {
                 const folderPath = path.join(root, folder);
 
                 fs.remove(folderPath)
-                    .then(() => console.log(`Folder \"${folderPath}\" is deleted successfully!`))
+                    .then(() => console.log(`Folder "${folderPath}" is deleted successfully!`))
                     .catch(error => console.error(`Error creating folder:`, error))
 
             });
