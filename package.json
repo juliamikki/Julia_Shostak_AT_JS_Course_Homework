@@ -1,0 +1,30 @@
+{
+  "name": "julia_shostak_at_js_course_homework",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/juliamikki/Julia_Shostak_AT_JS_Course_Homework#readme",
+  "bugs": {
+    "url": "https://github.com/juliamikki/Julia_Shostak_AT_JS_Course_Homework/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliamikki/Julia_Shostak_AT_JS_Course_Homework.git"
+  },
+  "license": "ISC",
+  "author": "Julia Shostak",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "fs-extra": "node hw3/fsOperations.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "globals": "^17.2.0",
+    "typescript-eslint": "^8.54.0"
+  }
+}
