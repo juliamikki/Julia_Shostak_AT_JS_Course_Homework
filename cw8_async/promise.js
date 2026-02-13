@@ -90,6 +90,7 @@ Promise.allSettled([asyncFunc(), asyncFunc(), asyncFunc(), asyncFunc()])
   .then((results) => {
     console.log("All promises settled:");
     results.forEach((result, index) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const _ = result.status === "fulfilled"
           ? console.log(`Promise ${index + 1} is ${result.status}: ${result.value}`)
           : console.log(`Promise ${index + 1} is ${result.status}: ${result.reason}`);
