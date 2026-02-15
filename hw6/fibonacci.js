@@ -34,13 +34,15 @@ function createFibonacciWithReduce(arrayLength) {
 }
 
 function createFibonacciFrom(startIndex, arrayLength) {
-  const newArray = createFibonacciWithReduce(arrayLength);
+  const newArray = createFibonacciWithReduce(arrayLength + startIndex);
   return newArray.slice(startIndex);
 }
 
 console.log(createFibonacciWithForLoop(10));
 console.log(createFibonacciWithReduce(10));
-console.log(createFibonacciFrom(7, 15));
+
+//ASSIGNMENT SOLUTION 1:
+console.log(createFibonacciFrom(3, 15));
 
 
 //new functions from the classwork insights:
@@ -64,7 +66,7 @@ function createFibonacciElementWithRecursiveAndMemo(x, memorized = {}) {
 
 function createFibonacciSequenceWithRecursiveAndMemo(startIndex, arrayLength) {
   const array = [];
-  for (let i = 0; i <= arrayLength; i++) {
+  for (let i = 0; i < arrayLength + startIndex; i++) {
     array.push(createFibonacciElementWithRecursiveAndMemo(i));
   }
   return array.slice(startIndex);
@@ -72,4 +74,6 @@ function createFibonacciSequenceWithRecursiveAndMemo(startIndex, arrayLength) {
 
 console.log(createFibonacciElementWithRecursive(13))
 console.log(createFibonacciElementWithRecursiveAndMemo(13));
-console.log(createFibonacciSequenceWithRecursiveAndMemo(4, 13));
+
+//ASSIGNMENT SOLUTION 2:
+console.log(createFibonacciSequenceWithRecursiveAndMemo(5, 6));
