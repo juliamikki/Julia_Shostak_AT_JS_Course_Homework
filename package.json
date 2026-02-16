@@ -15,12 +15,15 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "fs-extra": "node hw3/fsOperations.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "test-mocha": "mocha \"cw9_unit/**/mocha.test.js\" --timeout 5000 --reporter mochawesome --reporter-options reportDir=cw9_unit/mochawesome-report,reportFilename=report"
   },
   "dependencies": {
+    "chai": "^6.2.2",
     "chalk": "^5.6.2",
-    "fs-extra": "^11.3.3"
+    "fs-extra": "^11.3.3",
+    "jest": "^30.2.0",
+    "mocha": "^11.7.5",
+    "mochawesome": "^7.1.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
