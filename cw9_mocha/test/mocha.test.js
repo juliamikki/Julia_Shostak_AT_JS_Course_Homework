@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { findSquare, getPromise } from "../mocha.feature.js";
+import { findSquare, getPromise } from "../feature.js";
 
 describe("My first test suite", function () {
   const array = [
