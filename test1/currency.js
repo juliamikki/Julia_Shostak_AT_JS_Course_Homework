@@ -8,7 +8,7 @@ function convertNumToCurrency(number) {
   return FORMATTER.format(number);
 }
 
-//initial solution:
+//solution #1 (with for loop):
 function convertArrayToCurrency1(array) {
   const newArr = [];
   for (const value of array) {
@@ -24,7 +24,7 @@ function convertArrayToCurrency1(array) {
   return newArr;
 }
 
-//solution with map() and filter():
+//solution #2 (with map and filter):
 function convertArrayToCurrency2(array) {
   return array.filter((value) => {
     const isValid = typeof value === "string" && !Number.isNaN(Number(value));
