@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { findSquare, getPromise } from "../mocha.feature.js";
 
-describe("My first test suite", () => {
+describe("My first test suite", function () {
   const array = [
     { name: "a", width: "10", height: "12" },
     { name: "b", width: "12", height: "14" },
@@ -9,6 +9,22 @@ describe("My first test suite", () => {
     { name: "d", width: "16", height: "11" },
     { name: "e", width: "19", height: "11" },
   ];
+
+  before(async () => {
+    console.log("I am running before All tests");
+  });
+
+  beforeEach(async () => {
+    console.log("I am running before EACH test");
+  });
+
+  after(async () => {
+    console.log("I am running after All tests");
+  });
+
+  afterEach(async () => {
+    console.log("I am running after EACH test");
+  });
 
   it("true should be equal to true", () => {
     expect(true).to.be.true;
@@ -27,7 +43,7 @@ describe("My first test suite", () => {
   });
 
   it("should return promise after 3 seconds", async () => {
-    const result = await getPromise('Success', 3000);
-    expect(result).to.equal('Success');
-  })
+    const result = await getPromise("Success", 3000);
+    expect(result).to.equal("Success");
+  });
 });
