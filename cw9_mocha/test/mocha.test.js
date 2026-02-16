@@ -6,8 +6,8 @@ describe("My first test suite", function () {
     { name: "a", width: "10", height: "12" },
     { name: "b", width: "12", height: "14" },
     { name: "c", width: "15", height: "11" },
-    { name: "d", width: "16", height: "11" },
-    { name: "e", width: "19", height: "11" },
+    { name: "d", width: "16", height: "12" },
+    { name: "e", width: "19", height: "14" },
   ];
 
   before(async () => {
