@@ -1,7 +1,8 @@
 # Dependencies
 # =========================
 /node_modules/
-
+mochawesome-report
+*/jest-report/
 
 # Playwright
 # =========================
