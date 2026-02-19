@@ -46,4 +46,15 @@ describe("My first test suite", function () {
     const result = await getPromise("Success", 3000);
     expect(result).to.equal("Success");
   });
+
+  [
+    { value: "Success 1", timeout: 300 },
+    { value: "Success 2", timeout: 200 },
+    { value: "Success 2", timeout: 250 },
+  ].forEach(({ value, timeout } = obj) => {
+    it("should return promise after 3 seconds", async () => {
+      const result = await getPromise(value, timeout);
+      expect(result).to.be.equal(value);
+    });
+  });
 });
