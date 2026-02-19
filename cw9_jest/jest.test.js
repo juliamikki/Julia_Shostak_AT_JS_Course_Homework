@@ -1,3 +1,4 @@
+import { log } from "./utils/log.js";
 import { expect } from "chai";
 import { findSquare, findUsersWithA, getPromise } from "../cw9_jest/feature.js";
 
@@ -11,23 +12,23 @@ describe("My first test suite", function () {
   ];
 
   beforeAll(async () => {
-    console.log("I am running before all tests");
+    log("I am running before all tests");
   });
 
   beforeEach(async () => {
-    console.log("I am running before EACH test");
+    log("I am running before EACH test");
   });
 
   afterAll(async () => {
-    console.log("I am running after all tests");
+    log("I am running after all tests");
   });
 
   afterEach(async () => {
-    console.log("I am running after EACH test");
+    log("I am running after EACH test");
   });
 
   test("true should be equal to true", () => {
-    console.log("I am test");
+    log("I am test");
     expect(true).to.be.true;
   });
 
