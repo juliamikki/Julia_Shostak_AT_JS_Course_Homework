@@ -8,12 +8,15 @@ export default {
   reporters: [
     "default",
     [
-      "jest-html-reporter",
+      "jest-html-reporters",
       {
-        pageTitle: "Jest Test Report",
-        outputPath: "./jest-report/jest-report.html",
-        includeFailureMsg: true,
-        includeSuiteFailure: true,
+        pageTitle: "Jest Unit Test Report",
+        publicPath: "./jest-report",
+        filename: "report.html",
+        expand: true,
+        hideIcon: false,
+        openReport: false,
+        inlineSource: true,
       },
     ],
   ],
