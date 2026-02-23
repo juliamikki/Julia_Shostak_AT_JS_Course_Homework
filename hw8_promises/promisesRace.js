@@ -1,39 +1,30 @@
 import chalk from "chalk";
+import { getRandom } from "./random.js";
 
-function randomTimeout(min = 1, max = 5) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+function createPromise(id) {
+  return new Promise((resolve) => {
+    const timeout = getRandom();
+    setTimeout(() => {
+      resolve(`Return ${id} after ${timeout} seconds`);
+    }, timeout * 1000);
+  });
 }
 
-const promise1 = new Promise((resolve) => {
-  const timeout = randomTimeout();
-  setTimeout(() => {
-    resolve(`Return 1 after ${timeout} seconds`);
-  }, timeout * 1000);
-});
+const promises = [1, 2, 3].map(createPromise);
 
-const promise2 = new Promise((resolve) => {
-  const timeout = randomTimeout();
-  setTimeout(() => {
-    resolve(`Return 2 after ${timeout} seconds`);
-  }, timeout * 1000);
-});
-
-const promise3 = new Promise((resolve) => {
-  const timeout = randomTimeout();
-  setTimeout(() => {
-    resolve(`Return 3 after ${timeout} seconds`);
-  }, timeout * 1000);
-});
-
-Promise.race([promise1, promise2, promise3]).then((result) => {
-  console.log("The fist resolved promise:");
-  console.log(chalk.green(result));
-});
+Promise.race(promises)
+  .then((result) => {
+    console.log("The fist resolved promise:");
+    console.log(chalk.green(result));
+  })
+  .catch((err) => console.error(err));
 
 //method-checker:
-Promise.all([promise1, promise2, promise3]).then((results) => {
-  console.log("All promises:");
-  results.forEach((result) => {
-    console.log(chalk.green(result));
-  });
-});
+Promise.all(promises)
+  .then((results) => {
+    console.log("All promises:");
+    results.forEach((result) => {
+      console.log(chalk.green(result));
+    });
+  })
+  .catch((err) => console.error(err));
