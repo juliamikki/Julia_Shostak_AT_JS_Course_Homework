@@ -8,15 +8,6 @@ describe("Calculator tests", function () {
 
   const calc = new Calculator();
 
-  //?
-  beforeAll(async () => {
-    console.log("before tests");
-  });
-
-  afterAll(async () => {
-    console.log("after tests");
-  });
-
   test.each([
     [13, 17, 30],
     [-10, -5, -15],
