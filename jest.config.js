@@ -17,5 +17,6 @@ export default {
       includeSuiteFailure: true
     }]
   ],
+  
   testTimeout: 5000
 };

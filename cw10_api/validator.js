@@ -1,8 +1,8 @@
-import { Validator } from "jsonschema";
+import validator from "jsonschema";
 
 expect.extend({
   toBeValidSchema(response, schema) {
-    const schemaValidationResult = Validator.validate(response.data, schema);
+    const schemaValidationResult = validator.validate(response.data, schema);
     let errorMessage;
     if (schemaValidationResult.errors.length) {
       errorMessage = schemaValidationResult.errors.reduce(function (accumulator, currentValue) {

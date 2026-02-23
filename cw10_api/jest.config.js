@@ -4,19 +4,23 @@ export default {
     "^.+\\.[tj]s$": "babel-jest", // transform js/ts files
   },
   transformIgnorePatterns: [
-    "/node_modules/(?!chai)/",  // don't ignore chai (or any other modules)
+    "/node_modules/(?!chai)/", // don't ignore chai (or any other modules)
   ],
   moduleFileExtensions: ["js", "ts", "mjs", "cjs"],
-  roots: ["<rootDir>"],  // look for test in directory
+  roots: ["<rootDir>"], // look for test in directory
   reporters: [
-    "default", 
-    ["jest-html-reporters", {
-      pageTitle: "Jest Test Report",
-       publicPath: "./reports",
+    "default",
+    [
+      "jest-html-reporters",
+      {
+        pageTitle: "Jest Test Report",
+        publicPath: "./reports",
         filename: "test-report.html",
         enableMergeData: true,
         dataMergeLevel: 3,
-    }]
+      },
+    ],
   ],
-  testTimeout: 5000
+  setupFilesAfterEnv: ["./validator.js"],
+  testTimeout: 5000,
 };
