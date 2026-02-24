@@ -1,7 +1,12 @@
 # Dependencies
 # =========================
-/node_modules/
+node_modules/
 
+# Reports
+# =========================
+mochawesome-report/
+jest-report/
+coverage/
 
 # Playwright
 # =========================
