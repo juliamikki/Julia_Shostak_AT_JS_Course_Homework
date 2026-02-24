@@ -11,6 +11,7 @@ function createPromise(id) {
 async function run(funcArray) {
   const results = await Promise.allSettled(funcArray);
   results.forEach((result, index) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const _ =
       result.status === "fulfilled"
         ? console.log(`Promise ${index + 1} is ${result.status} : ${chalk.green(result.value)}`)
