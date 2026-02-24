@@ -2,6 +2,7 @@ const myArr = [false, 0, -0, 0n, "", null, undefined, NaN, -78, 1327, "string", 
 
 //solution #1 (sort only numbers):
 function removeFalsy1(array) {
+  console.log("/========= Solution 1 (sort only numbers): =========/");
   return array
     .filter((value) => value)
     .filter((value) => typeof value === "number")
@@ -10,6 +11,7 @@ function removeFalsy1(array) {
 
 //solution #2 (sort all as strings):
 function removeFalsy2(array) {
+  console.log("/========= Solution 2 (sort all as strings): =========/");
   return array
     .filter((value) => value)
     .sort((a, b) =>

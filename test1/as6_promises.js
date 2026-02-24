@@ -3,7 +3,8 @@ function getRandom(min = 1, max = 10) {
 }
 
 //solution #1:
-new Promise((resolve) => {
+await new Promise((resolve) => {
+  console.log("/========= Solution 1: =========/");
   setTimeout(() => {
     const number = getRandom();
     console.log("First number:", number);
@@ -38,6 +39,7 @@ function squareNumber(number) {
 }
 
 new Promise((resolve) => {
+  console.log("/========= Solution 2: =========/");
   setTimeout(() => {
     const number = getRandom();
     console.log("First number:", number);

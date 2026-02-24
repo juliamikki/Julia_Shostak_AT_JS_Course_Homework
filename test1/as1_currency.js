@@ -10,6 +10,7 @@ function convertNumToCurrency(number) {
 
 //solution #1 (with for loop):
 function convertArrayToCurrency1(array) {
+  console.log("/========= Solution 1: =========/");
   const newArr = [];
   for (const value of array) {
     const number = Number(value);
@@ -26,6 +27,7 @@ function convertArrayToCurrency1(array) {
 
 //solution #2 (with map and filter):
 function convertArrayToCurrency2(array) {
+  console.log("/========= Solution 2: =========/");
   return array.filter((value) => {
     const isValid = typeof value === "string" && !Number.isNaN(Number(value));
       if (!isValid) {

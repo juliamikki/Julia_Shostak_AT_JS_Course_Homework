@@ -11,6 +11,7 @@ const myArr = [
 
 //solution #1 (group using Map):
 function groupPersonsByAge(arrayOfObjects) {
+  console.log("/========= Solution 1: =========/");
   const map = new Map();
   for (const person of arrayOfObjects) {
     if (!map.has(person.age)) {
@@ -24,6 +25,7 @@ function groupPersonsByAge(arrayOfObjects) {
 
 //solution #1 (group using Map)_upgraded:
 function groupPersonsByAgeUpd(arrayOfObjects) {
+  console.log("/======= Solution 1 (upg): =======/");
   const map = new Map();
   for (const { name, age } of arrayOfObjects) {
     if (!map.has(age)) {
@@ -37,6 +39,7 @@ function groupPersonsByAgeUpd(arrayOfObjects) {
 
 //solution #2 (group using reduce()):
 function groupPersonsByAgeWithReduce(arrayOfObjects) {
+  console.log("/========= Solution 2: =========/");
   return arrayOfObjects.reduce((acc, { age, name }) => {
     if (!acc[age]) {
       acc[age] = [];
