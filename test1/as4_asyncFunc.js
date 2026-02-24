@@ -11,12 +11,17 @@ function createPromise(id) {
 async function run(funcArray) {
   const results = await Promise.allSettled(funcArray);
   results.forEach((result, index) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const _ =
-      result.status === "fulfilled"
-        ? console.log(`Promise ${index + 1} is ${result.status} : ${chalk.green(result.value)}`)
-        : console.log(`Promise ${index + 1} is ${result.status} : ${chalk.red(result.reason)}`);
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    result.status === "fulfilled"
+      ? console.log(`Promise ${index + 1} is ${result.status} : ${chalk.green(result.value)}`)
+      : console.log(`Promise ${index + 1} is ${result.status} : ${chalk.red(result.reason)}`);
   });
 }
 
-run([createPromise(2), createPromise(5), createPromise(3), createPromise(4), createPromise(1)]);
+run([
+  createPromise(2),
+  createPromise(5),
+  createPromise(3),
+  createPromise(4),
+  createPromise(1),
+]);
