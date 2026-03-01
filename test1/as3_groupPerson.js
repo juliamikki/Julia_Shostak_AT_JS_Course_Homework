@@ -9,25 +9,11 @@ const myArr = [
   { name: "Vasilisa", age: 1 },
 ];
 
-//solution #1 (group using Map):
-function groupPersonsByAge(arrayOfObjects) {
+//solution #1 (group with Map):
+function groupPersonsByAgeWithMap(arrayOfObjects) {
   console.log("/========= Solution 1: =========/");
   const map = new Map();
-  for (const person of arrayOfObjects) {
-    if (!map.has(person.age)) {
-      map.set(person.age, [person.name]);
-    } else {
-      map.get(person.age).push(person.name);
-    }
-  }
-  return Object.fromEntries(map);
-}
-
-//solution #1 (group using Map)_upgraded:
-function groupPersonsByAgeUpd(arrayOfObjects) {
-  console.log("/======= Solution 1 (upg): =======/");
-  const map = new Map();
-  for (const { name, age } of arrayOfObjects) {
+  for (const {name, age} of arrayOfObjects) {
     if (!map.has(age)) {
       map.set(age, [name]);
     } else {
@@ -37,9 +23,23 @@ function groupPersonsByAgeUpd(arrayOfObjects) {
   return Object.fromEntries(map);
 }
 
-//solution #2 (group using reduce()):
-function groupPersonsByAgeWithReduce(arrayOfObjects) {
+//solution #1 (group with Object):
+function groupPersonsByAgeWithObject(arrayOfObjects) {
   console.log("/========= Solution 2: =========/");
+  const result = {};
+  for (const {name, age} of arrayOfObjects) {
+    if (!result[age]) {
+      result[age] = [];
+    }
+    result[age].push(name);
+  }
+  return result;
+}
+
+
+//solution #3 (group using reduce()):
+function groupPersonsByAgeWithReduce(arrayOfObjects) {
+  console.log("/========= Solution 3: =========/");
   return arrayOfObjects.reduce((acc, { age, name }) => {
     if (!acc[age]) {
       acc[age] = [];
@@ -49,6 +49,6 @@ function groupPersonsByAgeWithReduce(arrayOfObjects) {
   }, {});
 }
 
-console.log(groupPersonsByAge(myArr));
-console.log(groupPersonsByAgeUpd(myArr));
+console.log(groupPersonsByAgeWithMap(myArr));
+console.log(groupPersonsByAgeWithObject(myArr));
 console.log(groupPersonsByAgeWithReduce(myArr));
