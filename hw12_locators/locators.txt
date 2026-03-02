@@ -1,0 +1,27 @@
+1) //button[@aria-label='Open menu']
+button[aria-label='Open menu']
+
+2) //header//*[@icon='bbc']
+header [icon='bbc']
+
+3) //button[@aria-label='Register']
+button[aria-label='Register']
+
+4)//*[@id='main-navigation-container']//a[text()='Earth']
+#main-navigation-container a[href='/future-planet']
+
+5) //*[@data-testid='westminster']//*[@data-testid='card-media']
+//*[@data-testid='westminster']//img
+
+[data-testid='westminster'] [data-testid='card-media']  
+[data-testid='westminster'] img
+
+6)(//*[@data-testid='vermont-grid']//*[@data-testid='dundee-card']//*[@data-testid='card-metadata-lastupdated'])[last()]
+[data-testid='vermont-grid'] div:nth-child(2) > [data-testid='dundee-card'] [data-testid='card-metadata-lastupdated'] 
+
+7) (//*[@data-testid="vermont-grid"]//*[@data-testid='card-metadata-tag'])[5]
+
+8) (//*[@data-testid="vermont-grid"]//*[@data-testid="card-headline"])[last()]
+[data-testid="vermont-grid"] div:nth-child(4) [data-testid='card-headline'] 
+
+
